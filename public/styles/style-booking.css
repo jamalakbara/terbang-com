@@ -1,0 +1,243 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6eaed;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover{
+    width: 100%;
+    height: 25vh;
+    background-image: url('/img/cover2.jpg');
+    background-size: cover;
+}
+
+.cover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #101b31;
+    opacity: 0.5;
+}
+
+.content{
+    width: 100%;
+    margin-top: 2em;
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(4, 10em);
+    grid-template-areas: 
+                        "a a a a"
+                        "b b b b"
+                        "c c c c"
+                        ". . . d";
+    grid-row-gap: 1em;
+    justify-content: center;
+}
+
+.content > header{
+    grid-area: a;
+}
+
+.content > header > h1{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 1000;
+    text-transform: capitalize;
+}
+
+.content > header > h2{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 100;
+    line-height: 3em;
+    color: #79716d;
+}
+
+.content > section.pesanan{
+    padding: 2em;
+    background-color: white;
+    border-radius: 0.2em;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+    grid-area: b;
+}
+
+.content > section.pesanan > h2{
+    margin: 0;
+    font-size: 1em;
+    line-height: 2.5em;
+}
+
+.content > section.pesanan > h2:first-child{
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > section.data{
+    grid-area: c;
+}
+
+.content > section.data > header > h1{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 1000;
+    text-transform: capitalize;
+}
+
+.content > section.data > .input-data{
+    background-color: white;
+    padding: 1em;
+    height: 15em;
+    display: grid;
+    /* grid-template-columns: repeat(8, auto); */
+    grid-template-areas:
+                        "d d d d d d d d" 
+                        "a a a a a a a a"
+                        "b b b b c c c c"
+                        "z z z z z z z z";
+    border-radius: 0.2em;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+}
+
+.content > section.data > .input-data > header{
+    padding: 0.5em;
+    grid-area: d;
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > section.data > .input-data > header h1{
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 1000;
+    text-transform: capitalize;
+}
+
+.content > section.data > .input-data > .nama{
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    grid-area: a;
+}
+
+.content > section.data > .input-data input{
+    padding: 0 0.5em;
+    height: 2em;
+    border: 1px solid #79716d;
+    outline: none;
+    transition: border 0.4s;
+}
+
+.content > section.data > .input-data input:hover{
+    border:1px solid #ff4357;
+    transition: border ease 0.4s;
+}
+
+.content > section.data > .input-data input:focus{
+    border:1px solid #ff4357;
+}
+
+.content > section.data > .input-data label{
+    text-transform: capitalize;
+}
+
+.content > section.data > .input-data > .hp{
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    grid-area: b;
+}
+
+.content > section.data > .input-data > .email{
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    grid-area: c;
+}
+
+.content  section.btn{
+    /* width: 100%; */
+    grid-area: z;
+    /* box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75); */
+}
+
+.content section.btn  button{
+    width: 100%;
+    height: 2.5em;
+    background-color: #ff4357;
+    border: none;
+    color: white;
+    border-radius: 0.2em;
+    text-transform: capitalize;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.content section.btn button:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.5s;
+}
+
+.content section.btn button:active{
+    color: #a5a4a9;
+}
+
+@media only screen and (max-width: 738px){
+    .content{
+        grid-template-columns: repeat(4, 8em);
+        grid-template-areas: 
+                        "a a a a"
+                        "b b b b"
+                        "c c c c"
+                        "d d d d";
+    }
+}
+
+@media only screen and (max-width: 578px){
+    .content{
+        grid-template-columns: repeat(4, 6em);
+    }
+    
+    .content > section.data > .input-data{
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .content > section.data > .input-data > header h1{
+        font-size: 1em;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 462px){
+    .content{
+        grid-template-columns: repeat(4, 5em);
+    }
+
+    .content > header > h1{
+        text-align: center;
+    }
+
+    .content > header > h2{
+        text-align: center;
+        line-height: 1.5em;
+    }
+
+    .content > section.data > header > h1{
+        text-align: center;
+    }
+
+    .content > section.pesanan > h2{
+        text-align: center;
+    }
+}

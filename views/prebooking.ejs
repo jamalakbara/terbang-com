@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-preebooking.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+</head>
+
+<body>
+    <% include navbar %>
+
+    <div class="cover"></div>
+
+    <div class="content">
+
+        <section class="header">
+            <h1>Penerbangan dari
+                <%= data.asal %> ke
+                <%= data.destinasi %>
+            </h1>
+            <h3>
+                <%= data.asal %> →
+                <%= data.destinasi %> •
+                <%= days[data.wktBerangkat.getDay()] %>, <%= data.wktBerangkat.getDate() %> <%= months[data.wktBerangkat.getMonth()] %> <%= data.wktBerangkat.getFullYear() %> • 1 Dewasa •
+                <%= data.kelas %>
+            </h3>
+        </section>
+
+        <section class="info">
+            <div class="header">
+                <h2>
+                    <%= data.asal %> →
+                    <%= data.destinasi %>
+                </h2>
+            </div>
+            <div class="detail">
+                <section>
+                    <h2>
+                        <%= days[data.wktBerangkat.getDay()] %>, <%= data.wktBerangkat.getDate() %> <%= months[data.wktBerangkat.getMonth()] %> <%= data.wktBerangkat.getFullYear() %>
+                    </h2>
+                </section>
+                <section>
+                    <h2>
+                        <%= data.maskapai %>
+                    </h2>
+                    <h2>
+                        <%= data.kelas %>
+                    </h2>
+                </section>
+                <section>
+                    <div class="from">
+                        <p>
+                            <%= hours[data.wktBerangkat.getHours()] %>:<%= minutes[data.wktBerangkat.getMinutes()] %>
+                        </p>
+                        <p>
+                            <%= data.asal %>
+                        </p>
+                    </div>
+                    <div>
+                        <p>→</p>
+                    </div>
+                    <div class="destination">
+                        <p>
+                            <%= hours[data.wktDatang.getHours()] %>:<%= minutes[data.wktDatang.getMinutes()] %>
+                        </p>
+                        <p>
+                            <%= data.destinasi %>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="info rincian">
+            <div class="header">
+                <h2>Rincian Harga</h2>
+            </div>
+            <div class="detail">
+                <div>
+                    <span>
+                        <%= data.maskapai %> (Dewasa) x
+                        <%= jumDewasa %></span>
+                    <span>IDR
+                        <%= data.hrgOld*jumDewasa %></span>
+                </div>
+                <div>
+                    <span>
+                        <%= data.maskapai %> (Anak) x
+                        <%= jumBocil %></span>
+                    <span>IDR
+                        <%= data.hrgCil*jumBocil %></span>
+                </div>
+                <div>
+                    <span>Harga yang Anda bayar</span>
+                    <span>IDR
+                        <%= jumDewasa*data.hrgOld + jumBocil*data.hrgCil%></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="continue">
+            <a href="/booking/<%= data.id %>/<%= jumDewasa*data.hrgOld + jumBocil*data.hrgCil%>"><button class="btn-submit">Continue</button></a>
+        </section>
+
+    </div>
+
+    <% include modal %>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>

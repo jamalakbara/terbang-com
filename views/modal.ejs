@@ -1,0 +1,37 @@
+<div class="modal">
+    <div class="modal-content">
+        <div class="modal-isi">
+            <div class="login">
+                <div class="pilih">
+                    <h1>log in</h1>
+                    <span>atau <a id="register">register</a></span>
+                </div>
+                <form action="/login" method="POST">
+                    <label for="email">email</label>
+                    <input type="email" class="email" id="email" name="emailLog" autocomplete="off">
+                    <label for="password">password</label>
+                    <input type="password" class="password" id="password" name="passwordLog">
+                    <button type="submit">log in</button>
+                </form>
+            </div>
+            <div class="regis close">
+                <div class="pilih">
+                    <h1>registration</h1>
+                    <span>atau <a id="login">log in</a></span>
+                </div>
+                <form action="/regis" method="POST">
+                    <label for="nama">nama</label>
+                    <input type="nama" class="nama" id="nama" name="nama" autocomplete="off">
+                    <label for="email">email</label>
+                    <input type="email" class="email" id="email" name="emailReg" autocomplete="off">
+                    <label for="password">password</label>
+                    <input type="password" class="password" id="password" name="passwordReg">
+                    <button type="submit">register</button>
+                </form>
+            </div>
+        </div>
+        <div class="btn-close">
+            <span id="close">x</span>
+        </div>
+    </div>
+</div>

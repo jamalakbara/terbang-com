@@ -1,0 +1,193 @@
+.navbar{
+    width: 100%;
+    height: 4.5em;
+    /* margin: 2em auto; */
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /* padding: 2em 1em; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* grid-template-columns: 1fr 0.3fr 0.1fr; */
+    background-color: #101b31;
+    color: white;
+    text-transform: capitalize;
+}
+
+.navbar > .nav-logo{
+    margin-left: 2em;
+}
+
+.navbar > .nav-logo p{
+    margin: 0;
+    line-height: 1em;
+}
+
+.navbar > .nav-logo p.terbang{
+    font-weight: 50;
+}
+
+.navbar > .nav-logo p.com{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar > .nav{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-gap: 1em;
+}
+
+.navbar > .nav > .hamburger{
+    margin: auto 1em auto auto;
+    font-size: 2em;
+    display: none;
+}
+
+.navbar > .nav > .nav-links{
+    display:  flex;
+    align-items: center;
+}
+
+.navbar > .nav > .nav-links > a{
+    margin-left: 1em;
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s;
+}
+
+.pink{
+    color: #ff4357 !important
+}
+
+.navbar > .nav > .nav-links > a:hover{
+    color: #ff4357;
+    transition: color ease 0.4s;
+}
+
+.navbar > .nav > .nav-drop{
+    background-color: #ff4357;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+
+.navbar > .nav > .nav-drop:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.4s;
+}
+
+.navbar > .nav > .nav-drop a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 0.5em;
+}
+
+.navbar > .nav > .nav-drop a:active{
+    color: #a5a4a9;
+}
+
+.navbar > .nav > .nav-drop > .drop-content{
+    width: 6.7em;
+    height: 5em;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff4357;
+    z-index: 2;
+    top: 4.5em;
+}
+
+.navbar > .nav > .nav-drop > .drop-content > a{
+    background-color: #ff4357;
+    transition: background-color 0.4s;
+}
+
+.navbar > .nav > .nav-drop > .drop-content > a:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.4s;
+}
+
+.show{
+    display: flex !important;
+}
+
+@media only screen and (max-width: 839px){
+    .navbar{
+        width: 100%;
+        height: 5em;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .open{
+        height: 40vh;
+    }
+
+    .show{
+        display: flex !important;
+    }
+
+    .navbar > .nav-logo{
+        margin-top: 2em;
+        align-self: flex-start;
+    }
+
+    .navbar > .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 70%;
+    }
+
+    .navbar > .nav > .hamburger{
+        display: block;
+        transition: color ease 0.4s;
+    }
+
+    .navbar > .nav > .hamburger:hover{
+        color: #ff4357;
+        transition: color ease 0.4s;
+    }
+
+    .navbar > .nav > .nav-links{
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar > .nav > .nav-links > a{
+        margin: 0;
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 3em;
+    }
+
+    .navbar > .nav > .nav-drop{
+        display: none;
+        height: 3em;
+    }
+
+    .navbar > .nav > .nav-drop > .drop-content{
+        width: 70%;
+        height: 5em;
+        top: 16.9em;
+    }
+}

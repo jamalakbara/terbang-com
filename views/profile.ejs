@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-profile.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+
+<body>
+    <% include navbar-logged-in %>
+
+    <div class="cover">
+        <h1>Profile <%- messages() %></h1>
+        <h2><a href="/">Home</a>/Profile</h2>
+    </div>
+
+    <div class="content">
+        <img src="/img/we-are.jpg" alt="foto profile">
+        <section class="profile">
+            <img src="/img/we-are.jpg" alt="foto profile">
+            <div class="data-profile">
+                
+                <h1>your profile</h1>
+                <span>
+                    <%= nama %></span>
+                <span>
+                    <%= email %></span>
+                <span>user id:
+                    <%= id %></span>
+                <button id="btn-edit">edit profile</button>
+                <button id="btn-history">history tiket</button>
+                <button id="btn-pass">change password</button>
+            </div>
+        </section>
+
+        <section class="edit-profile">
+            <h1>edit profile</h1>
+            <form class="form-edit" action="/edit/<%= id %>" method="post">
+                <label for="nama">nama</label>
+                <input type="text" id="nama" name="nama" value="<%= nama %>">
+                <label for="identitas">no. identitas</label>
+                <input type="text" id="identitas" name="identitas" value="<%= noKtp %>">
+                <label for="jk">jenis kelamin</label>
+                <input type="text" id="jk" name="jk" value="<%= jk %>">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" value="<%= email %>" readonly>
+                <label for="tlp">no. telpon</label>
+                <input type="tel" id="tlp" name="tlp" value="0<%= noTlp %>">
+                <label for="alamat">alamat</label>
+                <textarea name="alamat" id="alamat" cols="30" rows="10"><%= alamat %></textarea>
+                <button type="submit" id="btn-submit">edit</button>
+            </form>
+        </section>
+        <section class="history-tiket">
+            <h1>daftar pemesanan tiket</h1>
+            <% tiket.forEach(t=>{%>
+                <div class="tiket">
+                    <span><%= t.id %></span>
+                    <a href="/eticket"><button>Lihat</button></a>
+                </div>
+            <%}) %>
+        </section>
+        <section class="change-pass">
+            <h1>Change Password</h1>
+            <form class="form-pass" action="/changePassword/<%= id %>" method="post">
+                <label for="oldPass">Old Password</label>
+                <input type="password" id="oldPass" name="oldPass">
+                <label for="newPass">New Password</label>
+                <input type="password" id="newPass" name="newPass">
+                <button type="submit" id="btn-submit">Change</button>
+            </form>
+        </section>
+    </div>
+
+    <% include footer %>
+
+    <script src="/js/profile.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/navbar-logged-in.js"></script>
+</body>
+
+</html>

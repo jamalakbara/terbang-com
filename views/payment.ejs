@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-payment.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+</head>
+
+<body>
+    <% include navbar %>
+
+    <div class="cover"></div>
+
+    <div class="content">
+        <header>
+            <h1>petunjuk pembayaran transfer</h1>
+        </header>
+
+        <section class="cara-transfer">
+            <div class="pertama">
+                <h1>1. selesaikan pembayaran sebelum</h1>
+                <div class="kapan">
+                    <h1>hari ini 20:30</h1>
+                </div>
+            </div>
+            <div class="kedua">
+                <h1>2. mohon transfer ke</h1>
+                <div class="kemana">
+                    <h1>Bank Central Asia (BCA)</h1>
+                    <div class="data-penerima">
+                        <span class="rek">nomor rekening</span>
+                        <span class="no-rek">555 555 5555</span>
+                        <span class="nama">nama penerima</span>
+                        <span class="nama-pt">PT. NCHAN Group</span>
+                    </div>
+                    <div class="total">
+                        <span>jumlah transfer</span>
+                        <span>IDR<%= totHarga %></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ketiga">
+                <h1>3. konfirmasi pembayaran</h1>
+                <div class="aplot">
+                    <input type="file">
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-pesanan">
+            <div class="no-pesanan">
+                <span>no. pesanan</span>
+                <span><%= noPesanan %></span>
+            </div>
+
+            <div class="perjalanan">
+                <span>perjalanan anda</span>
+                <div class="penerbangan">
+                    <span>penerbangan</span>
+                    <span>25 Nov 2018</span>
+                    <span><%= dataTerbang.asal %> → <%= dataTerbang.destinasi %></span>
+                </div>
+            </div>
+
+            <div class="daftar-penumpang">
+                <span>daftar penumpang</span>
+                <div class="nama">
+                    <span><%= nama %></span>
+                    <span>dewasa</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="submit">
+            <a href="/"><button class="btn-submit">submit & continue</button></a>
+        </section>
+    </div>
+
+    <% include modal %>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>

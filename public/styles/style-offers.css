@@ -1,0 +1,487 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6eaed;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    color: white;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover{
+    /* margin: -8.5em 0 0 0; */
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: flex-start;
+    background-image: url('/img/cover3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cover > h1,h2{
+    margin: 0 0 0 100px;
+    color: white;
+    font-weight: 30;
+    /* text-shadow: -1px 1px 9px #000000; */
+}
+
+.cover h2{
+    line-height: 0.1em;
+}
+
+.cover h2 a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+.cover h2 a:hover{
+    color: #ff4357;
+    transition: color ease 0.4s;
+}
+
+.cover h1{
+    font-size: 5em;
+}
+
+.find{
+    margin: -9em auto 0 auto;
+    width: 90vw;
+    height: 35vh;
+    background-image: url('/img/cover2.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.find::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19,25,47,0.8);
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+}
+
+.find h2{
+    margin: 0;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 50;
+    position: relative;
+    z-index: 1;
+}
+
+.find > form.find-choose{
+    display: grid;
+    grid-template-columns: 10fr 10fr 10fr 5fr;
+    grid-gap: 1em;
+}
+
+.find > form.find-choose > .inputan{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.find > form.find-choose > .inputan > input[type='date']{
+    padding: 10.9px 20px;
+}
+
+.find > form.find-choose > .inputan > input{
+    width: 100%;
+    background: transparent;
+    border:2px solid #8e909d;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: border 0.4s;
+}
+
+.find > form.find-choose > .inputan > input:hover{
+    border:2px solid #ff4357;
+    transition: border ease 0.4s;
+}
+
+.find > form.find-choose > .inputan > input:focus{
+    border:2px solid #ff4357;
+}
+
+.find > form.find-choose > .inputan > input[placeholder]{
+    font-style: italic;
+}
+
+.find > form.find-choose > .find-btn{
+    /* background-color: #ff4357; */
+    margin: 1.5em 0 0.4em 0;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    /* color: white; */
+    /* transition: background 0.4s; */
+}
+
+.find > form.find-choose > .find-btn > button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #ff4357;
+    color: white;
+    transition: background 0.4s;
+}
+
+.find > form.find-choose > .find-btn > button:hover{
+    background: rgba(255, 67, 91, 0.7);
+    transition: background ease 0.4s;
+}
+
+.content{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content > section.header{
+    align-self: center;
+    margin: 0 0 5em 0;
+}
+
+.content > section.header > article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content > section.header > article > h1{
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 30;
+    color: #161b21;
+}
+
+.content > section.header > article > h2{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 30;
+    color: #848484;
+}
+
+.content > section.container{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, 8em);
+    grid-row-gap: 1em;
+}
+
+.content > section.container > .table{
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    /* justify-content: center; */
+    align-items: center;
+    border: 1px solid #8e909d;
+    border-radius: 0.2em;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: border-color 0.7s;
+}
+
+.content > section.container > .table:hover{
+    border-color: #ff4357;
+    transition: border-color ease 0.7s;
+}
+
+.content > section.container > .table > section.info{
+    margin-right: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > section.container > .table > section.info:first-child{
+    margin-left: 2em;
+}
+
+.content > section.container > .table > section.info:last-child{
+    margin-right: 2em;
+}
+
+.content > section.container > .table > section.info:last-child form{
+    display: grid;
+    grid-column-gap: 0.2em;
+    grid-template-areas: 
+                        "a a"
+                        "b c"
+                        "d e";
+}
+
+.content > section.container > .table > section.info:last-child form button{
+    grid-area: a;
+}
+
+.content > section.container > .table > section.info:last-child form label#dewasa{
+    grid-area: b;
+}
+
+.content > section.container > .table > section.info:last-child form label#bocil{
+    grid-area: c;
+}
+
+.content > section.container > .table > section.info:last-child form input#dewasa{
+    grid-area: d;
+}
+
+.content > section.container > .table > section.info:last-child form input#bocil{
+    grid-area: e;
+}
+
+.content > section.container > .table > section.info:last-child form input{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #848484;
+    padding: 0.1em 0.5em;
+}
+
+.content > section.container > .table > section.info:last-child form button{
+    width: 100%;
+    height: 2em;
+    background-color: #ff4357;
+    border: none;
+    color: white;
+    border-radius: 0.2em;
+    text-transform: capitalize;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.content > section.container > .table > section.info:last-child form button:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.5s;
+}
+
+.content > section.container > .table > section.info:last-child form button:active{
+    color: #a5a4a9;
+}
+
+/* .content > section.container > .table > section.info:last-child > a{
+    align-self: stretch;
+} */
+
+.content > section.container > .table > section.info p{
+    margin: 0;
+}
+
+.content > section.container > .table > section.info p:last-child{
+    font-size: 0.8em;
+    color: #a5a4a9;
+}
+
+.content > section.container > .table > section.info > a > .btn-pilih{
+    width: 100%;
+    height: 2em;
+    background-color: #ff4357;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 0.2em;
+    text-transform: capitalize;
+    outline: none;
+    transition: background-color 0.5s;
+}
+
+.content > section.container > .table > section.info > a > .btn-pilih:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.5s;
+}
+
+.content > section.container > .table > section.info > a > .btn-pilih:active{
+    color: #a5a4a9;
+}
+
+@media only screen and (max-width: 1252px){
+    .find{
+        margin: 0;
+        width: 100vw;
+        height: 35vh;
+    }
+}
+
+@media only screen and (max-width: 1136px){
+    .cover{
+        height: 100vh;
+    }
+
+    .cover h1{
+        font-size: 3.5em;
+    }
+
+    .cover h2{
+        font-size: 1.5em;
+    }
+
+    .content > section.container > .table{
+        grid-template-columns: repeat(5,9em);
+    }
+}
+
+@media only screen and (max-width: 839px){
+    .cover{
+        height: 75vh;
+    }
+    .cover > h1,h2{
+        margin: 0 0 0 100px;
+        color: white;
+        font-weight: 30;
+        /* text-shadow: -1px 1px 9px #000000; */
+    }
+
+    .find{
+        height: 25em;
+    }
+
+    .find h2{
+        font-size: 2em;
+    }
+    
+    .find > form.find-choose{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .find > form.find-choose > .inputan{
+        margin-bottom: 0.5em;
+    }
+    
+    .find > form.find-choose > .find-btn{
+        margin-top: 0;
+        padding: 0.5em;
+    }
+
+    .content > section.header > article > h1{
+        font-size: 2.2em;
+    }
+    
+    .content > section.header > article > h2{
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 813px){
+    .content > section.container > .table{
+        grid-template-columns: repeat(4,9em);
+    }
+    .content > section.container > .table > section.info:nth-child(4){
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 608px){
+    .content > section.header > article > h1{
+        font-size: 1.5em;
+    }
+    
+    .content > section.header > article > h2{
+        font-size: 1em;
+    }
+
+    .content > section.container{
+        grid-template-columns: repeat(2,12em);
+        grid-template-rows: repeat(3, 12em);
+        grid-template-areas: 
+                            ". ."
+                            ". ."
+                            "a a";
+        grid-gap: 1em;
+    }
+
+    .content > section.container > .table:last-child{
+        grid-area: a;
+    }
+
+    .content > section.container > .table{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+    }
+
+    .content > section.container > .table > section.info{
+        margin-right: 0;
+    }
+    
+    .content > section.container > .table > section.info:first-child{
+        margin-left: 0;
+    }
+    
+    .content > section.container > .table > section.info:last-child{
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 521px){
+    .cover{
+        height: 50vh;
+    }
+    .cover h1{
+        font-size: 2.5em;
+    }
+    .cover h2{
+        font-size: 1em;
+    }
+
+    .find{
+        height: 50vh;
+    }
+    .find h2{
+        font-size: 1em;
+    }
+
+    .find > form.find-choose > .inputan > label{
+        font-size: 0.8em;
+    }
+
+    .find > form.find-choose > .inputan > input{
+        padding: 3px 5px;
+    }
+}
+
+@media only screen and (max-width: 434px){
+    .content > section.container{
+        grid-template-columns: repeat(2,10em);
+        grid-template-rows: repeat(3, 12em);
+        grid-gap: 1em;
+    }
+}

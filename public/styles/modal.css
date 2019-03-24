@@ -1,0 +1,177 @@
+.modal{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal > .modal-content{
+    width: 60vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-image: url(/img/modal-img.jpg);
+    background-size: cover;
+}
+
+.modal > .modal-content > .btn-close{
+    margin-right: 1em;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal > .modal-content > .btn-close > span{
+    cursor: pointer;
+}
+
+.modal > .modal-content > .btn-close > span:hover{
+    color: #a5a4a9;
+}
+
+.modal > .modal-content > .modal-isi{
+    height: 20em;
+    margin-top: -1em;
+    margin-left: 1em;
+    padding: 2em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.2em;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+}
+
+.modal > .modal-content > .modal-isi  .pilih{
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal > .modal-content > .modal-isi  .pilih > h1{
+    margin: 0;
+    text-transform: capitalize;
+    color: #ff4357;
+}
+
+.modal > .modal-content > .modal-isi  .pilih > span a{
+    text-transform: capitalize;
+    color: #ff4357;
+    cursor: pointer;
+    transition: font-weight ease-in-out 0.4s;
+}
+
+.modal > .modal-content > .modal-isi  .pilih > span a:hover{
+    font-weight: bolder;
+    transition: font ease-in-out 0.4s;
+}
+
+.modal > .modal-content > .modal-isi  form{
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.modal > .modal-content > .modal-isi  form > input{
+    margin-bottom: 1em;
+    padding: 0 0.5em;
+    height: 2em;
+    border: 1px solid #79716d;
+    outline: none;
+    transition: border 0.4s;
+    color: black;
+}
+
+.modal > .modal-content > .modal-isi  form > input:hover{
+    border:1px solid #ff4357;
+    transition: border ease 0.4s;
+}
+
+.modal > .modal-content > .modal-isi  form > input:focus{
+    border:1px solid #ff4357;
+}
+
+.modal > .modal-content > .modal-isi  form > button[type='submit']{
+    text-transform: capitalize;
+    width: 100%;
+    height: 3em;
+    background-color: #ff4357;
+    border: none;
+    color: white;
+    border-radius: 0.2em;
+    text-transform: capitalize;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.modal > .modal-content > .modal-isi  form > button[type='submit']:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.5s;
+}
+
+.modal > .modal-content > .modal-isi  form > button[type='submit']:active{
+    color: #a5a4a9;
+}
+
+.close{
+    display: none !important;
+}
+
+@media only screen and (max-width: 1136px){
+    .modal > .modal-content{
+        width: 60vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal > .modal-content > .modal-isi{
+        width: 20em;
+        height: 20em;
+    }
+
+    .modal > .modal-content > .modal-isi  .pilih{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal > .modal-content > .btn-close{
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 795px){
+    .modal > .modal-content > .btn-close{
+        margin: 0 .3em 0 auto;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .modal > .modal-content > .btn-close{
+        margin: 0 .3em 0 0.3em;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .modal > .modal-content{
+        width: 75vw;
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    .modal > .modal-content{
+        width: 90vw;
+        height: 50vh;
+    }
+}

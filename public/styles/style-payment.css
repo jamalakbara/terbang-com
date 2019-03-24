@@ -1,0 +1,403 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6eaed;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover{
+    width: 100%;
+    height: 25vh;
+    background-image: url('/img/cover2.jpg');
+    background-size: cover;
+}
+
+.cover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #101b31;
+    opacity: 0.5;
+}
+
+.content{
+    width: 100%;
+    margin-top: 2em;
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(3, 20em);
+    grid-template-areas: 
+                        "a a a"
+                        "b b c"
+                        "b b d"
+                        "b b .";
+    grid-gap: 2.5em;
+    justify-content: center;
+}
+
+.content > header{
+    grid-area: a;
+}
+
+.content > header > h1{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 1000;
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer{
+    padding: 2em;
+    grid-area: b;
+    background-color: white;
+    border-radius: 0.2em;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+}
+
+.content > .cara-transfer > .pertama{
+    width: 100%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 2em 0 2em 1em; */
+}
+
+.content > .cara-transfer > .pertama h1{
+    margin: 0;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer > .pertama > h1{
+    margin-bottom: 1em;
+}
+
+.content > .cara-transfer > .pertama > .kapan{
+    width: 70vh;
+    padding: 1.5em;
+    align-self: center;
+    border: 1px solid rgba(121, 113, 109, 0.3);
+    border-radius: 0.2em;
+}
+
+.content > .cara-transfer > .kedua{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 2em 0 2em 1em; */
+}
+
+.content > .cara-transfer > .kedua h1{
+    margin: 0;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer > .kedua > h1{
+    margin-bottom: 1em;
+}
+
+.content > .cara-transfer > .kedua > .kemana{
+    width: 70vh;
+    margin-bottom: 2em;
+    align-self: center;
+    border: 1px solid rgba(121, 113, 109, 0.3);
+    border-radius: 0.2em;
+}
+
+.content > .cara-transfer > .kedua > .kemana > h1{
+    padding: 1.5em;
+    background-color: #e6eaed;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima{
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 15em);
+    grid-template-areas: 
+                        "a b"
+                        "c d";
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima > span{
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima > .rek{
+    grid-area: a;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima > .no-rek{
+    grid-area: b;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima > .nama{
+    grid-area: c;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .data-penerima > .nama-pt{
+    grid-area: d;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .total{
+    padding: 1em 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 15em);
+    grid-template-areas: 
+                        "a b";
+}
+
+.content > .cara-transfer > .kedua > .kemana > .total > span{
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .total > span:first-child{
+    grid-area: a;
+}
+
+.content > .cara-transfer > .kedua > .kemana > .total > span:last-child{
+    grid-area: b;
+}
+
+.content > .cara-transfer > .ketiga{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 2em 0 2em 1em; */
+}
+
+.content > .cara-transfer > .ketiga > h1{
+    margin: 0 0 1em 1em;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+.content > .cara-transfer > .ketiga > .aplot{
+    width: 70vh;
+    padding: 2em;
+    margin-bottom: 2em;
+    align-self: center;
+    border: 1px solid rgba(121, 113, 109, 0.3);
+    border-radius: 0.2em;
+}
+
+.content > .detail-pesanan{
+    grid-area: c;
+    background-color: white;
+    border-radius: 0.2em;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+}
+
+.content > .detail-pesanan > .no-pesanan{
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > .detail-pesanan > .no-pesanan > span{
+    text-transform: capitalize;
+}
+.content > .detail-pesanan > .no-pesanan > span:first-child{
+    color: #b9bfca;
+    text-transform: uppercase;
+}
+
+.content > .detail-pesanan > .perjalanan{
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > .detail-pesanan > .perjalanan span{
+    text-transform: capitalize;
+}
+
+.content > .detail-pesanan > .perjalanan > span{
+    margin-bottom: 1em;
+    color: #b9bfca;
+    text-transform: uppercase;
+}
+
+.content > .detail-pesanan > .perjalanan > .penerbangan{
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .detail-pesanan > .perjalanan > .penerbangan > span:nth-child(2){
+    margin-bottom: 1em;
+}
+
+.content > .detail-pesanan > .daftar-penumpang{
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid #d6d5d4;
+}
+
+.content > .detail-pesanan > .daftar-penumpang > span{
+    margin-bottom: 1em;
+    color: #b9bfca;
+    text-transform: uppercase;
+}
+
+.content > .detail-pesanan > .daftar-penumpang > .nama{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.content > .submit{
+    width: 100%;
+    grid-area: d;
+    box-shadow: 3px 6px 38px -12px rgba(0,0,0,0.75);
+}
+
+.content > .submit > a .btn-submit{
+    width: 100%;
+    height: 3em;
+    background-color: #ff4357;
+    border: none;
+    color: white;
+    border-radius: 0.2em;
+    text-transform: capitalize;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.content > .submit > a .btn-submit:hover{
+    background-color: #f9243b;
+    transition: background-color ease 0.5s;
+}
+
+.content > .submit > a .btn-submit:active{
+    color: #a5a4a9;
+}
+
+@media only screen and (max-width: 1136px){
+    .content{
+        grid-template-columns: repeat(3, 15em);
+        grid-template-areas: 
+                            "a a a"
+                            "b b b"
+                            "c c c"
+                            ". . d";
+    }
+}
+
+@media only screen and (max-width: 839px){
+    .content{
+        grid-template-columns: repeat(3, 10em);
+        grid-template-areas: 
+                            "a a a"
+                            "b b b"
+                            "c c c"
+                            "d d d";
+    }
+}
+
+@media only screen and (max-width: 636px){
+    .content{
+        grid-template-columns: repeat(3, 8em);
+        grid-gap: 1em;
+    }
+
+    .content > .cara-transfer > .pertama{
+        margin: 0;
+    }
+
+    .content > .cara-transfer > .pertama h1{
+        font-size: 1.2em;
+    }
+
+    .content > .cara-transfer > .pertama > .kapan{
+        width: 50vh;
+        margin-bottom: 1em;
+        padding: 1em;
+    }
+
+    .content > .cara-transfer > .kedua h1{
+        font-size: 1.2em;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana{
+        width: 50vh;
+        margin-bottom: 2em;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > h1{
+        padding: 1em;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > .data-penerima{
+        padding: 1em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > .total{
+        padding: 1em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content > .cara-transfer > .ketiga > h1{
+        margin: 0;
+        font-size: 1.2em;
+    }
+
+    .content > .cara-transfer > .ketiga > .aplot{
+        width: 50vh;
+        padding: 1.2em 1em;
+    }
+}
+
+@media only screen and (max-width: 464px){
+    .content{
+        grid-template-columns: repeat(3, 6em);
+    }
+
+    .content > header > h1{
+        text-align: center;
+    }
+
+    .content > .cara-transfer > .pertama > .kapan{
+        width: 30vh;
+    }
+    .content > .cara-transfer > .kedua > .kemana{
+        width: 30vh;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > h1{
+        font-size: .9em;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > .data-penerima span{
+        font-size: .8em;
+    }
+
+    .content > .cara-transfer > .kedua > .kemana > .total > span{
+        font-size: .8em;
+    }
+
+    .content > .cara-transfer > .ketiga > .aplot{
+        width: 30vh;
+    }
+}

@@ -1,0 +1,357 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6eaed;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    color: white;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover{
+    /* margin: -8.5em 0 0 0; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/cover.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cover h2{
+    color: #e9962c;
+    font-size: 10em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    position: relative;
+}
+
+.cover h1{
+    margin: 0;
+    color: white;
+    font-weight: 10;
+    font-size: 4em;
+    text-shadow: 0px 2px 10px rgba(0,0,0,0.81);
+    position: absolute;
+    z-index: 1;
+}
+
+.find{
+    height: 35vh;
+    background-image: url('/img/cover2.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.find::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19,25,47,0.8);
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+}
+
+.find h2{
+    margin: 0;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 50;
+    position: relative;
+    z-index: 1;
+}
+
+.find > form.find-choose{
+    display: grid;
+    grid-template-columns: 10fr 10fr 10fr 5fr;
+    grid-gap: 1em;
+}
+
+.find > form.find-choose > .inputan{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.find > form.find-choose > .inputan > input{
+    width: 100%;
+    background: transparent;
+    border:2px solid #8e909d;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: border 0.4s;
+}
+
+.find > form.find-choose > .inputan > input[type='date']{
+    padding: 10.9px 20px;
+}
+
+.find > form.find-choose > .inputan > input:hover{
+    border:2px solid #ff4357;
+    transition: border ease 0.4s;
+}
+
+.find > form.find-choose > .inputan > input:focus{
+    border:2px solid #ff4357;
+}
+
+.find > form.find-choose > .inputan > input[placeholder]{
+    font-style: italic;
+}
+
+.find > form.find-choose > .find-btn{
+    /* background-color: #ff4357; */
+    margin: 1.5em 0 0.4em 0;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    /* color: white; */
+    /* transition: background 0.4s; */
+}
+
+.find > form.find-choose > .find-btn > button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #ff4357;
+    color: white;
+    transition: background 0.4s;
+}
+
+.find > form.find-choose > .find-btn > button:hover{
+    background: rgba(255, 67, 91, 0.7);
+    transition: background ease 0.4s;
+}
+
+.content{
+    width: 100%;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > section.header{
+    margin: 0 0 5em 0;
+}
+
+.content > section.header > article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content > section.header > article > h1{
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 30;
+    color: #161b21;
+}
+
+.content > section.header > article > h2{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 30;
+    color: #848484;
+}
+
+.content > section.container{
+    display: grid;
+    grid-template-columns: repeat(4, 17em);
+    grid-template-rows: 22em;
+    grid-gap: 2em;
+}
+
+.content > section.container > a{
+    text-decoration: none;
+}
+
+.content > section.container > a> .content-img{
+    /* width: 17em;
+    height: 22em; */
+    height: 100%;
+    /* background-image: url(/img/aw.jpg); */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.content > section.container > a> .content-img h3{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 75;
+    
+}
+
+.content > section.container > a> .content-img h2{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 50;
+    
+}
+
+@media only screen and (max-width: 1252px){
+    .content{
+        height: 70em;
+    }
+    
+    .content > section.container{
+        grid-template-columns: repeat(2, 17em);
+        grid-template-rows: repeat(2, 22em);
+    }
+}
+
+@media only screen and (max-width: 839px){
+    .cover h2{
+        font-size: 6em;
+    }
+    
+    .cover h1{
+        font-size: 2.5em;
+    }
+
+    .find{
+        height: 25em;
+    }
+
+    .find h2{
+        font-size: 2em;
+    }
+    
+    .find > form.find-choose{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .find > form.find-choose > .inputan{
+        margin-bottom: 0.5em;
+    }
+    
+    .find > form.find-choose > .find-btn{
+        margin-top: 0;
+        padding: 0.5em;
+    }
+
+    .content{
+        height: 60em;
+    }
+
+    .content > section.header > article > h1{
+        font-size: 2em;
+    }
+    
+    .content > section.header > article > h2{
+        font-size: 0.8em;
+    }
+
+    .content > section.container{
+        grid-template-columns: repeat(2, 15em);
+        grid-template-rows: repeat(2, 19em);
+    }
+}
+
+@media only screen and (max-width: 608px){
+    .find h2{
+        font-size: 1em;
+    }
+
+    .find > form.find-choose > .inputan > label{
+        font-size: 0.8em;
+    }
+
+    .find > form.find-choose > .inputan > input{
+        padding: 3px 5px;
+    }
+
+    .content{
+        height: 80em;
+    }
+
+    .content > section.container{
+        grid-template-columns: 12em;
+        grid-template-rows: repeat(4, 14em);
+    }
+    
+    .content > section.header > article > h1{
+        font-size: 1.5em;
+    }
+    
+    .content > section.header > article > h2{
+        font-size: 1em;
+    }
+    
+    .content > section.container > a> .content-img h2{
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    .cover{
+        height: 50vh;
+    }
+
+    .cover h2{
+        font-size: 5em;
+    }
+    
+    .cover h1{
+        font-size: 2em;
+    }
+
+    .find{
+        height: 50vh;
+    }
+    .find h2{
+        font-size: 1em;
+    }
+
+    .find > form.find-choose > .inputan > label{
+        font-size: 0.8em;
+    }
+
+    .find > form.find-choose > .inputan > input{
+        padding: 3px 5px;
+    }
+}
+
+@media only screen and (max-width: 389px){
+    .cover h2{
+        font-size: 3em;
+    }
+    
+    .cover h1{
+        font-size: 1.5em;
+    }
+}

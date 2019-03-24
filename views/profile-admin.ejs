@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-profile-admin.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+
+<body>
+    <% include navbar-logged-in %>
+
+    <div class="cover">
+        <h1>Profile <%- messages() %></h1>
+        <h2><a href="/">Home</a>/Profile</h2>
+    </div>
+
+    <div class="content">
+        <img src="/img/we-are.jpg" alt="foto profile">
+        <section class="profile">
+            <img src="/img/we-are.jpg" alt="foto profile">
+            <div class="data-profile">
+                
+                <h1>your profile</h1>
+                <span>
+                    <%= nama %></span>
+                <span>
+                    <%= email %></span>
+                <span>user id:
+                    <%= id %></span>
+                <!-- <button id="btn-edit">edit profile</button>
+                <button id="btn-history">history tiket</button>
+                <button id="btn-pass">change password</button> -->
+            </div>
+        </section>
+        <section class="history-tiket">
+            <h1>Manage Ticket</h1>
+            <% tiket.forEach(t=>{%>
+                <div class="tiket">
+                    <span><%= t.id %></span>
+                    <a href="/approve/<%= t.id %>"><button>Approve</button></a>
+                </div>
+            <%}) %>
+        </section>
+    </div>
+
+    <% include footer %>
+
+    <script src="/js/profile.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/navbar-logged-in.js"></script>
+</body>
+
+</html>

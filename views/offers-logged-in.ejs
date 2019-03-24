@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-offers.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+</head>
+
+<body>
+    <% include navbar-logged-in %>
+
+    <div class="cover">
+        <h1>Offers</h1>
+        <h2><a href="/index">Home</a>/Offers</h2>
+    </div>
+
+    <div class='find'>
+        <h2>Find the Adventure of Lifetime</h2>
+        <form class="find-choose" action="/find" method="POST">
+            <div class="inputan">
+                <label for="from">From:</label>
+                <input type="text" id="from" placeholder="Keyword here" name="asal" autocomplete="off">
+            </div>
+            <div class="inputan">
+                <label for="to">To:</label>
+                <input type="text" id="to" placeholder="Keyword here" name="destinasi" autocomplete="off">
+            </div>
+            <div class="inputan">
+                <label for="Departure">Departure date:</label>
+                <input type="text" onfocus="(this.type='date')" onfocusout="(this.type='text')" id="Departure"
+                    placeholder="Keyword here" name="tglDatang" autocomplete="off">
+            </div>
+            <div class="find-btn">
+                <button>Find</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="content">
+        <section class="header">
+            <article>
+                <h1>Top destinations in Indonesia</h1>
+                <h2>TAKE A LOOK AT THESE OFFERS</h2>
+            </article>
+        </section>
+
+        <section class="container">
+            <% data.forEach(d => { %>
+            <div class="table">
+                <section class="info">
+                    <span>
+                        <%= d.maskapai %></span>
+                </section>
+                <section class="info">
+                    <p>
+                        <%= hours[d.wktBerangkat.getHours()] %>:
+                        <%= minutes[d.wktBerangkat.getMinutes()] %>
+                    </p>
+                    <p>
+                        <%= d.asal %>
+                    </p>
+                </section>
+                <section class="info">
+                    <p>
+                        <%= hours[d.wktDatang.getHours()] %>:
+                        <%= minutes[d.wktDatang.getMinutes()] %>
+                    </p>
+                    <p>
+                        <%= d.destinasi %>
+                    </p>
+                </section>
+                <section class="info">
+                    <p>
+                        <%= Math.abs(d.wktBerangkat-d.wktDatang)/60000 %> menit</p>
+                    <p>langsung</p>
+                </section>
+                <section class="info">
+                    <p>IDR
+                        <%= d.hrgOld %>
+                    </p>
+                    <form action="/prebook/<%= d.id %>" method="post">
+                        <button class="btn-pilih">pick</button>
+                        <label for="dewasa">Dewasa</label>
+                        <input type="number" id="dewasa" name="dewasa" min="1" value="1">
+                        <label for="bocil">Anak- Anak</label>
+                        <input type="number" id="bocil" name="bocil" min="0" value="0">
+                    </form>
+                </section>
+            </div>
+            <%})%>
+        </section>
+    </div>
+
+    <% include footer %>
+
+    <% include modal %>
+
+    <script src="js/modal.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/navbar-logged-in.js"></script>
+</body>
+
+</html>

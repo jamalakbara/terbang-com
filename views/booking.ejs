@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>terbang.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style-booking.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+</head>
+
+<body>
+    <% include navbar %>
+
+    <div class="cover"></div>
+
+    <div class="content">
+        <header>
+            <h1>pemesanan anda</h1>
+            <h2>Isi data Anda dan review pesanan Anda.</h2>
+        </header>
+
+        <section class="pesanan">
+            <h2><%= data.asal %> → <%= data.destinasi %></h2>
+            <h2><%= days[data.wktBerangkat.getDay()] %>, <%= data.wktBerangkat.getDate() %> <%= months[data.wktBerangkat.getMonth()] %> <%= data.wktBerangkat.getFullYear() %> </h2>
+        </section>
+        <section class="data">
+            <header>
+                <h1>Data Pemesan</h1>
+            </header>
+
+            <form class="input-data" action="/payment/<%= data.id %>/<%= harga %>" method="POST"> 
+                <header>
+                    <h1>Data Pemesan (untuk E-tiket/Voucher)</h1>
+                </header>
+                <div class="nama">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" name="nama" id="nama" required autocomplete="off">
+                </div>
+                <div class="hp">
+                    <label for="hp">no. handphone</label>
+                    <input type="tel" name="hp" id="hp" required autocomplete="off">
+                </div>
+                <div class="email">
+                    <label for="email">e-mail</label>
+                    <input type="email" name="email" id="email" required autocomplete="off">
+                </div>
+                <section class="btn">
+                    <button type="submit">Continue</button></a>
+                </section>
+            </form>
+        </section>
+
+    </div>
+
+    <% include modal %>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>
